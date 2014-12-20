@@ -13,8 +13,7 @@ fn main() {
     
     let groups: Vec<int> = 
             reader.read_line().unwrap().as_slice()
-                  .split(' ').map(|s| s.trim())   
-                  .filter(|s| !s.is_empty())      
+                  .split(' ')     
                   .map(|s| {
                     let num = from_str(s).unwrap();
                     sum = sum + num;
@@ -31,6 +30,11 @@ fn main() {
 
         for i in range(0, n_groups) {
             tmp = tmp + groups[i];
+            
+            if tmp > y {
+                break;
+            }
+
             if tmp == y {
                 tmp = 0i;
             }
@@ -42,6 +46,8 @@ fn main() {
     }
     
     result.push(sum);
-    println!("{}", result);
-    
+    for r in result.iter() {
+      print!("{} ", *r);
+    }
+    println!("");
 }
