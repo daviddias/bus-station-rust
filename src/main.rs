@@ -26,10 +26,11 @@ fn main() {
                   })  
                   .collect();           
     
-    for y in range(min, sum) {
+    for y in range(min, sum/2+1) {
         if sum % y != 0i {
             continue;
-        } 
+        }
+
 
         let mut tmp = 0i;
 
