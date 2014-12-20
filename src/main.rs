@@ -21,7 +21,6 @@ fn main() {
                     if num < min {
                         min = num;
                     }
-
                     return num;
                   })  
                   .collect();           
@@ -30,7 +29,6 @@ fn main() {
         if sum % y != 0i {
             continue;
         }
-
 
         let mut tmp = 0i;
 
