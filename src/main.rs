@@ -4,6 +4,7 @@ fn main() {
     let mut reader = io::stdin();
 
     let mut sum = 0i;
+    let mut min = 100000i;
     let mut result: Vec<int> = Vec::new();
 
     let n_groups: uint = from_str(reader.read_line()
@@ -17,11 +18,15 @@ fn main() {
                   .map(|s| {
                     let num = from_str(s).unwrap();
                     sum = sum + num;
+                    if num < min {
+                        min = num;
+                    }
+
                     return num;
                   })  
                   .collect();           
     
-    for y in range(1, sum) {
+    for y in range(min, sum) {
         if sum % y != 0i {
             continue;
         } 
